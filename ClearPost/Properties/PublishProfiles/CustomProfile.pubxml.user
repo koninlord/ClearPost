@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAN6vVGNG/AUGxWJqW3SZQ6gAAAAACAAAAAAAQZgAAAAEAACAAAAB6p9qKF1yCaevz7PUtj15FM8tllRk8/O3k1XslDsTv5QAAAAAOgAAAAAIAACAAAADvVkfCezImUyP6mS7XDTInfcRFhQxvAVs+4osBnHixeCAAAADIdbHb/zZZt9XJRgB11tmN0yxU+5wKNqI801tgKEowAEAAAACl7cu7zSqjl5wylNrrzrtlQa2hEM2UoQWId41pUKqGM2wY4nhu3IbkJhiZQPb/H/DYJ46+CjrHZxd7nmt0n9kN</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="FlearanceConnection">
+      <Value>Server=SQL5047.site4now.net%3bInitial Catalog=DB_A61E39_hostels%3bUser Id=DB_A61E39_hostels_admin%3bPassword=vhim12345%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

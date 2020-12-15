@@ -1,0 +1,98 @@
+﻿@model IEnumerable<ClearPost.Models.ViewModel.FeesViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Fees</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-outline-info">Create New</a>
+</p>
+<hr>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+        text-align: center;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2
+    }
+
+    th {
+        background-color: dodgerblue;
+        color: white;
+    }
+</style>
+
+<table class="table">
+    <thead>
+        <tr>
+
+
+            <th>
+                @Html.DisplayNameFor(model => model.FeeAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsOwing)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AmountPaid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AmountOwing)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentID)
+            </th>
+
+            <th>
+                Actions
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.FeeAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsOwing)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AmountPaid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AmountOwing)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentID)
+            </td>
+
+
+            <td>
+                <a asp-action="Edit" class="btn btn-success" asp-route-id="@item.FeeID">Edit</a> |
+                <a asp-action="Details" class="btn btn-info" asp-route-id="@item.FeeID">Details</a> |
+                <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.FeeID">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

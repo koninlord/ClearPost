@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewData["Title"] = "ShowSportUnClearedReport";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>ShowSportUnClearedReport</h1>
+
+@{
+    if (ViewBag.Document == null)
+    {
+        <h2 class="text-center">This report is unavailable for preview.</h2>
+    }
+    else
+    {
+
+        var strBase64 = Convert.ToBase64String(ViewBag.Document);
+        var FileContent = string.Format("data:application/pdf;base64,{0}", strBase64);
+
+        <center>
+            <br /><br /><embed style="height: 700px; width: 70%;" src="@FileContent" />
+        </center>
+    }
+}

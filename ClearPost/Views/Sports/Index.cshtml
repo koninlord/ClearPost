@@ -1,0 +1,89 @@
+﻿@model IEnumerable<ClearPost.Models.ViewModel.SportsViewModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Sports Dashboard</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-outline-info">Create New</a>
+</p>
+<hr>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+        text-align: center;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2
+    }
+
+    th {
+        background-color: dodgerblue;
+        color: white;
+    }
+</style>
+
+<table class="table">
+    <thead>
+        <tr>
+
+
+            <th>
+                @Html.DisplayNameFor(model => model.SportsType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsOwingKit)
+            </th>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentID)
+            </th>
+
+            <th>
+                Actions
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.SportsType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsOwingKit)
+                </td>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StudentID)
+                </td>
+
+
+                <td>
+                    <a asp-action="Edit" class="btn btn-success" asp-route-id="@item.SportID">Edit</a> |
+                    <a asp-action="Details" class="btn btn-info" asp-route-id="@item.SportID">Details</a> |
+                    <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.SportID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
